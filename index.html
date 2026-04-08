@@ -231,14 +231,21 @@ Visit My YouTube Channel (ConfigFusion)
 
 <script>
 const cards = document.querySelectorAll('.card');
-window.addEventListener('scroll', () => {
+
+function showCards() {
     cards.forEach(card => {
         const top = card.getBoundingClientRect().top;
-        if(top < window.innerHeight - 50){
+        if (top < window.innerHeight - 50) {
             card.classList.add('show');
         }
     });
-});
+}
+
+// Run on page load
+window.addEventListener('load', showCards);
+
+// Run on scroll
+window.addEventListener('scroll', showCards);
 </script>
 
 </body>
