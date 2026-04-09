@@ -147,6 +147,45 @@ footer {
     scroll-margin-top: 90px;
 }
 
+/* HAMBURGER STYLE */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+        background: #0a66c2;
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+        margin: 0;
+        display: block;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
 </style>
 </head>
 
@@ -156,7 +195,13 @@ footer {
 <div class="navbar">
     <div class="logo">Bikash Kumar</div>
 
-    <div class="nav-links">
+    <!-- Hamburger Icon -->
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+
+    <!-- Nav Links -->
+    <div class="nav-links" id="nav-links">
         <a href="#top">Home</a>
         <a href="#services">Core Competencies</a>
         <a href="#about">Key Impact</a>
@@ -451,6 +496,21 @@ Visit My YouTube Channel (ConfigFusion)
 <footer>
 <p>Built with ❤️ by Bikash Kumar</p>
 </footer>
+
+<script>
+const toggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
+</script>
 
 </body>
 </html>
