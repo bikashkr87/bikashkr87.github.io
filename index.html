@@ -8,6 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* GLOBAL */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -15,17 +21,62 @@ body {
     color: #1f2937;
 }
 
-header {
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #0a66c2;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 600;
+}
+
+.nav-links a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
     background: linear-gradient(135deg, #0a66c2, #004182);
     color: white;
 }
 
 .profile-img {
-    width: 120px;
+    width: 140px;
     border-radius: 50%;
-    border: 3px solid white;
+    border: 4px solid white;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .tagline {
@@ -33,9 +84,15 @@ header {
     font-size: 18px;
 }
 
+.stats {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
 .btn {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 20px;
     padding: 10px 18px;
     background: white;
     color: #0a66c2;
@@ -44,6 +101,7 @@ header {
     font-weight: 600;
 }
 
+/* SECTION */
 section {
     max-width: 1000px;
     margin: auto;
@@ -62,11 +120,6 @@ h2 {
     color: #0a66c2;
 }
 
-a {
-    color: #0a66c2;
-    font-weight: 600;
-}
-
 /* GRID */
 .grid {
     display: grid;
@@ -79,16 +132,6 @@ a {
     padding: 18px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.mini-card:hover {
-    transform: translateY(-5px);
-}
-
-.icon {
-    font-size: 22px;
-    margin-bottom: 10px;
 }
 
 footer {
@@ -97,29 +140,57 @@ footer {
     background: #004182;
     color: white;
 }
+
+/* existing CSS */
+
+[id] {
+    scroll-margin-top: 90px;
+}
+
 </style>
 </head>
 
-<body>
+<body id="top">
 
-<header>
-<img src="profile.jpg" class="profile-img">
-<h1>Bikash Kumar</h1>
-<p>Senior Technical Product Manager | ADC | Security | Cloud</p>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">Bikash Kumar</div>
 
-<p class="tagline">
-Building scalable, secure application delivery & zero trust solutions
-</p>
+    <div class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#services">Core Competencies</a>
+        <a href="#about">Key Impact</a>
+        <a href="#experience">Experience</a>
+        <a href="#case">Case Studies</a>
+        <a href="#achievements">Key Achievements</a>
+        <a href="#awards">Awards</a>
+        <a href="#content">Content</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
 
-<p>🚀 10+ yrs | 99.9% uptime | 540+ devices secured | Multi-Cloud</p>
+<!-- HERO -->
+<div class="hero">
+    <img src="profile.jpg" class="profile-img">
 
-<a href="mailto:bikashkr87@gmail.com" class="btn">🚀 Let's Connect</a>
-</header>
+    <h1>Bikash Kumar</h1>
+    <h3>Senior Technical Product Manager</h3>
+
+    <p class="tagline">
+        Building Scalable ADC, Zero Trust & Secure Access Solutions
+    </p>
+
+    <p class="stats">
+        🚀 10+ yrs | 99.9% uptime | 540+ devices | Multi-Cloud
+    </p>
+
+    <a href="mailto:bikashkr87@gmail.com" class="btn">🚀 Let's Connect</a>
+</div>
 
 <section>
 
 <!-- SUMMARY -->
-<div class="card">
+<div class="card" id="top">
 <h2>Professional Summary</h2>
 <p>
 Senior Technical Product Manager with 10+ years of experience in data center infrastructure,
@@ -128,10 +199,9 @@ ADC, Zero Trust (ZTNA), and cloud-native networking.
 </div>
 
 <!-- CORE COMPETENCIES -->
-<div class="card">
+<div class="card" id="services">
 <h2>💡 Core Competencies</h2>
 <div class="grid">
-
 <div class="mini-card">
 <div class="icon">📦</div>
 <h3>Product Management</h3>
@@ -166,7 +236,7 @@ ADC, Zero Trust (ZTNA), and cloud-native networking.
 </div>
 
 <!-- KEY IMPACT -->
-<div class="card">
+<div class="card" id="about">
 <h2>🚀 Key Impact</h2>
 <div class="grid">
 
@@ -194,7 +264,7 @@ ADC, Zero Trust (ZTNA), and cloud-native networking.
 </div>
     
 <!-- EXPERIENCE -->
-<div class="card">
+<div class="card" id="experience">
 <h2>Experience</h2>
 
 <p><b>Array Networks | Senior Technical Product Manager (2024–Present)</b></p>
@@ -221,7 +291,7 @@ ADC, Zero Trust (ZTNA), and cloud-native networking.
 </div>
 
 <!-- CASE STUDIES -->
-<div class="card">
+<div class="card" id="case">
 <h2>🚀 Case Studies</h2>
 
 <div class="grid">
@@ -254,7 +324,7 @@ ADC, Zero Trust (ZTNA), and cloud-native networking.
 </div>
 
 <!-- KEY ACHIEVEMENTS -->
-<div class="card">
+<div class="card" id="achievements">
 <h2>Key Achievements</h2>
 <ul>
 <li>Built multiple data centers from scratch</li>
@@ -264,7 +334,7 @@ ADC, Zero Trust (ZTNA), and cloud-native networking.
 </ul>
 </div>
 
-<div class="card">
+<div class="card" id="awards">
 <h2>🏆 Awards & Certifications</h2>
 
 <ul>
@@ -354,7 +424,7 @@ CCNA, CCNP, Fortinet NSE, Palo Alto ACE, IPv6 Engineer
 </div>
 
 <!-- CONTENT -->
-<div class="card">
+<div class="card" id="content">
 <h2>Technical Content</h2>
 <p>
 I create hands-on tutorials on Windows Server, Networking, and Security.
@@ -366,7 +436,7 @@ Visit My YouTube Channel (ConfigFusion)
 </div>
 
 <!-- CONTACT -->
-<div class="card">
+<div class="card" id="contact">
 <h2>Contact</h2>
 <p>
 📧 <a href="mailto:bikashkr87@gmail.com">Email Me</a><br>
