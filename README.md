@@ -1,2 +1,2 @@
-# bikashkr87.github.io
+# bikashkumar-tech.github.io
 Senior Technical Product Manager portfolio | ADC, WAF, VPN, Cloud | Array Networks
